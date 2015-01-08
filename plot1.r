@@ -5,6 +5,6 @@ data <- fread("./data/household_power_consumption.txt", header = TRUE, sep = ";"
 data$Date <- as.Date(data$Date, "%d/%m/%Y")
 library(dplyr)
 sub_data <- filter(data, Date == "2007-02-01" | Date == "2007-02-02")
-hist(as.numeric(sub_data$Global_active_power), main = "Global active power", col = "red", xlab = "Global active power (kilowatts)")
+hist(as.numeric(sub_data$Global_active_power), main = "Global active power", col = "red", bg = "transparent", cex.lab = 0.8, cex.axis = 0.8, xlab = "Global active power (kilowatts)")
 dev.copy(png, "Plot 1.png")
 dev.off()

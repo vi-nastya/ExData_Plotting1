@@ -3,6 +3,6 @@ data <- read.csv.sql('./data/household_power_consumption.txt',"select * from fil
 data$Date <- as.Date(data$Date, "%d/%m/%Y")
 data$DateTime <- paste(data$Date, data$Time)
 data$DateTime <- strptime(data$DateTime, format = "%Y-%m-%d %H:%M:%S")
-plot(data$DateTime, data$Global_active_power, type = "l", ylab="Global Active Power (killowatts)", xlab= "")
+plot(data$DateTime, data$Global_active_power, type = "l", bg = "transparent", cex.lab = 0.8, cex.axis = 0.8, ylab="Global Active Power (killowatts)", xlab= "")
 dev.copy(png, "Plot2.png")
 dev.off()
